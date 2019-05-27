@@ -1,0 +1,26 @@
+﻿@page "/"
+
+<h1>Hello, gRPC!</h1>
+
+<button class="btn btn-primary" onclick="@SayHello">Say Hello</button>
+
+<hr />
+
+<p>@Greeting</p>
+
+@functions {
+
+    private string Greeting;
+
+    async Task SayHello()
+    {
+        var channel = new Channel("localhost:50051", ChannelCredentials.Insecure);
+        var client = new Greeter.GreeterClient(channel);
+
+        var reply = await client.SayHelloAsync(new HelloRequest { Name = "Blazor gRPC Client" });
+        Greeting = reply.Message;
+
+        await channel.ShutdownAsync();
+    }
+
+}
