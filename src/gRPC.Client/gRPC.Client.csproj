@@ -6,15 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Client" Generator="MSBuild:Compile"/>
+    <Protobuf Include="Protos\greet.proto" GrpcServices="Client" Generator="MSBuild:Compile" />
     <Content Include="@(Protobuf)" />
     <None Remove="@(Protobuf)" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.8.0-rc.1" />
-    <PackageReference Include="Grpc.Core" Version="1.21.0" />
-    <PackageReference Include="Grpc.Tools" Version="1.21.0">
+    <PackageReference Include="Google.Protobuf" Version="3.9.0" />
+    <PackageReference Include="Grpc.Core" Version="1.22.0" />
+    <PackageReference Include="Grpc.Tools" Version="1.22.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

@@ -2,13 +2,13 @@
 
 <h1>Hello, gRPC!</h1>
 
-<button class="btn btn-primary" onclick="@SayHello">Say Hello</button>
+<button class="btn btn-primary" @onclick="@SayHello">Say Hello</button>
 
 <hr />
 
 <p>@Greeting</p>
 
-@functions {
+@code {
 
     private string Greeting;
 
